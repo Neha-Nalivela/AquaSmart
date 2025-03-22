@@ -17,8 +17,12 @@ const Login = () => {
         username,
         password,
       });
+
+      // Save user and token
       login(response.data.user, response.data.token);
-      navigate('/');
+
+      // Navigate to the dashboard after successful login
+      navigate('/dashboard');
     } catch (err) {
       setError('Invalid credentials');
     }

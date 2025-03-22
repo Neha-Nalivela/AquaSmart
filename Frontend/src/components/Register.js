@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Register = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('user');
   const [error, setError] = useState('');
@@ -14,12 +15,13 @@ const Register = () => {
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
         username,
+        email,  // ✅ Include email field
         password,
         role,
       });
       navigate('/login');
     } catch (err) {
-      setError('Registration failed');
+      setError(err.response?.data?.error || 'Registration failed. Please try again.');
     }
   };
 
@@ -35,6 +37,16 @@ const Register = () => {
             className="form-control"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label>Email</label>
+          <input
+            type="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
