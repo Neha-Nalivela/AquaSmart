@@ -1,0 +1,66 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Centered Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    padding: 15px;
+    color: white;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  /* Home Page Layout */
+  .home-sections {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .home-sections div {
+    padding: 15px;
+    background: lightgray;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Login Page */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 50px auto;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
